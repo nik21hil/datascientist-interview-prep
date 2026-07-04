@@ -5,19 +5,19 @@
 #### 175. Combine Two Tables
 
 ```sql
-Select p.firstName, p.lastName, a.city, a.state
-From Person p
-Left Join Address a 
+SELECT p.firstName, p.lastName, a.city, a.state
+FROM Person p
+LEFT JOIN Address a 
 ON p.personId = a.personId;
 ```
 
 #### 181. Employees Earning More Than Their Managers
 ```sql
-Select e1.name As Employee
-From Employee e1
-Join Employee e2
-On e1.managerId = e2.id
-Where e1.salary > e2.salary;
+SELECT e1.name AS Employee
+FROM Employee e1
+JOIN Employee e2
+ON e1.managerId = e2.id
+WHERE e1.salary > e2.salary;
 ```
 
 #### 3. show the country and the area for countries with an area between 200,000 and 250,000. 
