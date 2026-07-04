@@ -126,6 +126,31 @@ FROM world
 WHERE UPPER(capital) = Concat(UPPER(name), ' CITY');
 ```
 
+#### 13. Find the capital and the name where the capital includes the name of the country.
+
+```sql
+SELECT capital, name 
+FROM world 
+WHERE UPPER(capital) LIKE UPPER(CONCAT('%', name, '%'));
+```
+
+#### 14. Find the capital and the name where the capital is an extension of name of the country.
+
+```sql
+SELECT capital, name 
+FROM world 
+WHERE UPPER(capital) LIKE UPPER(CONCAT(name, '_%'));
+```
+
+#### 15. Show the name and the extension where the capital is a proper (non-empty) extension of name of the country.
+
+```sql
+SELECT name, REPLACE(capital, name, '') AS extension
+FROM world 
+WHERE UPPER(capital) LIKE UPPER(CONCAT(name, '_%'));
+```
+
+
 ## 2 SELECT from World  
 
 
