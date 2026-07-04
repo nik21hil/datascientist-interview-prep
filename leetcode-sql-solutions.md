@@ -39,3 +39,26 @@ FROM Orders
 GROUP BY 1
 );
 ```
+
+#### 196. Delete Duplicate Emails
+```sql
+DELETE
+FROM Person
+WHERE id NOT IN
+(
+SELECT MIN(id)
+FROM Person
+GROUP BY email
+);
+```
+
+#### 197. Rising Temprature
+```sql
+SELECT id
+FROM
+(
+SELECT id, temperature, LAG(temperature, 1) OVER (ORDER BY recordDate) AS previous_temperature
+FROM Weather
+)
+WHERE temperature > previous_temperature;
+```
