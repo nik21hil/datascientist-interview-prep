@@ -1,4 +1,4 @@
-# 🗄️ SQLZoo Problem Solutions
+<h1 align="center">🗄️ SQLZoo Problem Solutions</h1> 
 
 ### 0 SELECT basics 
 #### 1. Show the population of Germany
