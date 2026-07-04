@@ -54,6 +54,7 @@ GROUP BY email
 
 #### 197. Rising Temprature
 ```sql
+-- Option 1 (If all dates are present)
 SELECT id
 FROM
 (
@@ -61,4 +62,11 @@ SELECT id, temperature, LAG(temperature, 1) OVER (ORDER BY recordDate) AS previo
 FROM Weather
 )
 WHERE temperature > previous_temperature;
+
+-- Option 2 (If all dates are not present)
+SELECT w1.id
+FROM Weather w1
+JOIN Weather w2  
+ON w1.recordDate = w2.recordDate + 1
+WHERE w1.temperature > w2.temperature;
 ```
