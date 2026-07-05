@@ -161,31 +161,40 @@ WHERE UPPER(capital) LIKE UPPER(CONCAT(name, '_%'));
 #### 1. Observe the result of running this SQL command to show the name, continent and population of all countries.
 
 ```sql
-
+SELECT name, continent, population
+FROM world;
 ```
 
 #### 2. Show the name for the countries that have a population of at least 200 million.
 
 ```sql
-
+SELECT name 
+FROM world
+WHERE population > 200000000;
 ```
 
 #### 3. Give the name and the per capita GDP for countries with a population of at least 200 million.
 
 ```sql
-
+SELECT name, (gdp/population) AS gdp_per_capita
+FROM world
+WHERE population > 200000000;
 ```
 
 #### 4. Show the name and population in millions for the countries of South America.
 
 ```sql
-
+SELECT name, population/1000000 AS population_in_millions
+FROM world
+WHERE continent = 'South America';
 ```
 
 #### 5. Show the name and population for France, Germany, and Italy.
 
 ```sql
-
+SELECT name, population
+FROM world
+WHERE name IN ('France', 'Germany', 'Italy');
 ```
 
 #### 6. Show the countries which have a name that includes the word `United`.
