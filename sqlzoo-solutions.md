@@ -1,5 +1,7 @@
 <h1 align="center">🗄️ SQLZoo Problem Solutions</h1> 
 
+---
+
 ### 0 SELECT basics 
 
 #### 1. Show the population of Germany
@@ -25,6 +27,8 @@ SELECT name, area
 FROM world
 WHERE area BETWEEN 200000 AND 250000;
 ```
+
+---
 
 ### 1 SELECT name 
 
@@ -149,6 +153,8 @@ SELECT name, REPLACE(capital, name, '') AS extension
 FROM world 
 WHERE UPPER(capital) LIKE UPPER(CONCAT(name, '_%'));
 ```
+
+---
 
 ### 2 SELECT from World  
 
