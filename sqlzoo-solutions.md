@@ -265,7 +265,14 @@ AND LEFT(name, 1) = LEFT(capital, 1);
 #### 13. Find countries that contain all vowels and no spaces in their name.
 
 ```sql
-
+SELECT name
+FROM world
+WHERE UPPER(name) LIKE '%A%'
+AND UPPER(name) LIKE '%E%'
+AND UPPER(name) LIKE '%I%'
+AND UPPER(name) LIKE '%O%'
+AND UPPER(name) LIKE '%U%'
+AND UPPER(name) NOT LIKE '% %';
 ```
 
 ---
