@@ -200,43 +200,66 @@ WHERE name IN ('France', 'Germany', 'Italy');
 #### 6. Show the countries which have a name that includes the word `United`.
 
 ```sql
-
+SELECT name
+FROM world
+WHERE UPPER(name) LIKE '%UNITED%';
 ```
 
 #### 7. Show the countries that are big by area or population.
 
 ```sql
-
+SELECT name, population, area
+FROM world
+WHERE area > 3000000 
+OR population > 250000000; 
 ```
 
 #### 8. Show the countries that are big by area or population, but not both.
 
 ```sql
-
+SELECT name, population, area
+FROM world
+WHERE 
+area > 3000000 AND population < 250000000
+OR
+area < 3000000 AND population > 250000000
+; 
 ```
 
 #### 9. Show the name, population, and GDP for South American countries, rounded appropriately.
 
 ```sql
-
+SELECT name, 
+ROUND(population/1000000,2) AS population_in_millions,
+ROUND(gdp/1000000000,2) AS gdp_in_billions
+FROM world
+WHERE continent = 'South America';
 ```
 
 #### 10. Show per-capita GDP for trillion dollar countries, rounded to the nearest 1000.
 
 ```sql
-
+SELECT name, 
+ROUND(gdp/population,-3) AS gdp_per_capita_in_thousands
+FROM world
+WHERE gdp > 1000000000000;
 ```
 
 #### 11. Show the name and capital where the name and capital have the same number of characters.
 
 ```sql
-
+SELECT name, capital
+FROM world
+WHERE LENGTH(name) = LENGTH(capital);
 ```
 
 #### 12. Show the name and capital where the first letters match but the name and capital are different.
 
 ```sql
-
+SELECT name, capital
+FROM world
+WHERE name <> capital 
+AND LEFT(name, 1) = LEFT(capital, 1);
 ```
 
 #### 13. Find countries that contain all vowels and no spaces in their name.
