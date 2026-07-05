@@ -282,55 +282,86 @@ AND UPPER(name) NOT LIKE '% %';
 #### 1. Show Nobel prizes for 1950.
 
 ```sql
-
+SELECT yr, subject, winner
+FROM nobel
+WHERE yr = 1950;
 ```
 
 #### 2. Show the winner of the 1962 Literature prize.
 
 ```sql
-
+SELECT winner
+FROM nobel
+WHERE yr = 1962
+AND UPPER(subject) = 'LITERATURE';
 ```
 
 #### 3. Show the year and subject for Albert Einstein.
 
 ```sql
-
+SELECT yr, subject
+FROM nobel
+WHERE winner = 'Albert Einstein';
 ```
 
 #### 4. Show Peace prize winners since 2000.
 
 ```sql
-
+SELECT winner
+FROM nobel
+WHERE UPPER(subject) = 'PEACE' 
+AND yr >= 2000;
 ```
 
 #### 5. Show Literature prize winners from 1980 to 1989.
 
 ```sql
-
+SELECT yr, subject,winner
+FROM nobel
+WHERE UPPER(subject) = 'LITERATURE' 
+AND yr BETWEEN 1980 AND 1989;
 ```
 
 #### 6. Show prize details for selected US presidents.
 
 ```sql
-
+SELECT * 
+FROM nobel
+WHERE winner IN 
+(
+'Theodore Roosevelt',
+'Thomas Woodrow Wilson',
+'Jimmy Carter',
+'Barack Obama'
+);
 ```
 
 #### 7. Show winners with first name `John`.
 
 ```sql
-
+SELECT winner
+FROM nobel
+WHERE UPPER(winner) LIKE ('JOHN%');
 ```
 
-#### 8. Show Chemistry and Physics winners from 1980, plus Medicine winners from 1984.
+#### 8. Show Physics winners from 1980 plus CHemistry winners from 1984.
 
 ```sql
-
+SELECT yr, subject, winner
+FROM nobel
+WHERE 
+(UPPER(subject) = 'PHYSICS' AND yr = 1980)
+OR
+(UPPER(subject) = 'CHEMISTRY' AND yr = 1984);
 ```
 
 #### 9. Show winners from 1980 excluding Chemistry and Medicine.
 
 ```sql
-
+SELECT yr, subject, winner
+FROM nobel
+WHERE yr = 1980
+AND subject NOT IN ('Chemistry','Medicine');
 ```
 
 #### 10. Show early Medicine winners and recent Literature winners.
