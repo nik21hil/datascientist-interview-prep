@@ -378,25 +378,35 @@ OR
 #### 11. Find the winner with special characters in the name.
 
 ```sql
-
+SELECT *
+FROM nobel
+WHERE UPPER(winner) = 'PETER GRÜNBERG';
 ```
 
 #### 12. Find the winner with an apostrophe in the name.
 
 ```sql
-
+SELECT *
+FROM nobel
+WHERE UPPER(winner) = "EUGENE O'NEILL";
 ```
 
 #### 13. Show winners whose name starts with `Sir`.
 
 ```sql
-
+SELECT winner, yr, subject
+FROM nobel
+WHERE UPPER(winner) LIKE 'SIR%'
+ORDER BY yr DESC, winner;
 ```
 
-#### 14. Show 1984 winners ordered by subject and winner.
+#### 14. Show 1984 winners ordered by subject and winner. *IMPORTANT CONCEPT*
 
 ```sql
-
+SELECT winner, subject
+FROM nobel
+WHERE yr=1984
+ORDER BY subject IN ('physics','chemistry'), subject,winner;
 ```
 
 ---
