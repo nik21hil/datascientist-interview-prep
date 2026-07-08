@@ -400,7 +400,7 @@ WHERE UPPER(winner) LIKE 'SIR%'
 ORDER BY yr DESC, winner;
 ```
 
-#### 14. Show 1984 winners ordered by subject and winner. *IMPORTANT CONCEPT*
+#### 14. Show 1984 winners ordered by subject (But physics and chemistry should be last) and winner. *Rare Tricky Concept*
 
 ```sql
 SELECT winner, subject
