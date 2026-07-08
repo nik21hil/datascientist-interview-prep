@@ -367,7 +367,12 @@ AND subject NOT IN ('Chemistry','Medicine');
 #### 10. Show early Medicine winners and recent Literature winners.
 
 ```sql
-
+SELECT yr, subject, winner
+FROM nobel
+WHERE
+(UPPER(subject) = 'MEDICINE' AND yr < 1910)
+OR
+(UPPER(subject) = 'LITERATURE' AND yr >= 2004);
 ```
 
 #### 11. Find the winner with special characters in the name.
