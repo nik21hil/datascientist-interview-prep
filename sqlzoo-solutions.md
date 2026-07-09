@@ -416,31 +416,63 @@ ORDER BY subject IN ('physics','chemistry'), subject,winner;
 #### 1. List countries with population greater than Russia.
 
 ```sql
-
+SELECT name 
+FROM world
+WHERE population > 
+(
+SELECT population 
+FROM world
+WHERE name='Russia'
+);
 ```
 
 #### 2. Show countries in Europe with per-capita GDP greater than the United Kingdom.
 
 ```sql
-
+SELECT name 
+FROM world
+WHERE continent = 'Europe'
+AND gdp/population > 
+(
+SELECT gdp/population 
+FROM world
+WHERE name='United Kingdom'
+);
 ```
 
 #### 3. List countries in the same continents as Argentina or Australia.
 
 ```sql
-
+SELECT name, continent
+FROM world
+WHERE continent IN
+(
+SELECT continent
+FROM world
+WHERE name IN ('Argentina', 'Australia')
+)
+ORDER BY name;
 ```
 
 #### 4. Show countries with population greater than Canada but less than Poland.
 
 ```sql
+SELECT name, population
+FROM world
+WHERE 
+population > (Select population FROM world WHERE name = 'United Kingdom')
+AND
+population < (Select population FROM world WHERE name = 'Germany')
 
 ```
 
 #### 5. Show European countries with population as a percentage of Germany.
 
 ```sql
-
+SELECT name, CONCAT(ROUND(population*100/(SELECT population FROM world WHERE name = 'GERMANY'),0),'%') AS percentage
+FROM world
+WHERE continent = 'Europe'
+ORDER BY name
 ```
 
 #### 6. Show countries with GDP greater than every country in Europe.
