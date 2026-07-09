@@ -478,37 +478,88 @@ ORDER BY name
 #### 6. Show countries with GDP greater than every country in Europe.
 
 ```sql
-
+SELECT name
+FROM world
+WHERE gdp > 
+(
+SELECT MAX(gdp)
+FROM world
+WHERE continent = 'Europe'
+)
+AND gdp is NOT NULL;
 ```
 
 #### 7. Find the largest country by area in each continent.
 
 ```sql
+WITH cte AS
+(
+SELECT continent, name, area, RANK() OVER(PARTITION BY continent ORDER BY area DESC) AS area_rnk
+FROM world
+)
 
+SELECT continent, name, area
+FROM cte
+WHERE area_rnk = 1
+order by name;
 ```
 
 #### 8. List the first country alphabetically in each continent.
 
 ```sql
+WITH cte AS
+(
+SELECT continent, name, RANK() OVER(PARTITION BY continent ORDER BY name) AS name_rnk
+FROM world
+)
 
+SELECT continent, name
+FROM cte
+WHERE name_rnk = 1
+order by continent;
 ```
 
-#### 9. Find continents where every country has population less than or equal to 25 million.
+#### 9. Find countries from continent where every country has population less than or equal to 25 million.
 
 ```sql
-
+SELECT name, continent, population
+FROM world
+WHERE continent IN
+(
+SELECT continent
+FROM world
+GROUP BY continent
+HAVING MAX(population) <= 25000000
+);
 ```
 
-#### 10. Find countries from continents where all countries have population less than or equal to 25 million.
+#### 10. Find countries with population more than three times that of any other country in the same continent.
 
 ```sql
+WITH cte AS
+(
+SELECT continent, name, population, RANK() OVER(PARTITION BY continent ORDER BY population DESC) AS p_rnk
+FROM world
+),
 
-```
+cte1 AS
+(
+SELECT *
+FROM cte
+WHERE p_rnk = 1
+),
 
-#### 11. Find countries with population more than three times that of any other country in the same continent.
+cte2 AS
+(
+SELECT *
+FROM cte
+WHERE p_rnk = 2
+)
 
-```sql
-
+SELECT a.name, a.continent
+FROM cte1 a JOIN cte2 b ON a.continent = b.continent
+WHERE a.population > 3 * b.population
+ORDER BY name;
 ```
 
 ---
