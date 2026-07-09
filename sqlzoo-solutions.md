@@ -569,49 +569,66 @@ ORDER BY name;
 #### 1. Show the total population of the world.
 
 ```sql
-
+SELECT SUM(population)
+FROM world;
 ```
 
 #### 2. List all continents only once.
 
 ```sql
-
+SELECT continent
+FROM world
+GROUP BY 1;
 ```
 
 #### 3. Show the total GDP of Africa.
 
 ```sql
-
+SELECT SUMpopulation(gdp)
+FROM world
+WHERE continent = 'Africa';
 ```
 
 #### 4. Count the countries with area of at least 1,000,000.
 
 ```sql
-
+SELECT COUNT(name)
+FROM world
+WHERE area >= 1000000;
 ```
 
 #### 5. Show the total population of Estonia, Latvia, and Lithuania.
 
 ```sql
-
+SELECT SUM(population)
+FROM world
+WHERE name IN ('Estonia', 'Latvia', 'Lithuania');
 ```
 
 #### 6. For each continent, show the continent and number of countries.
 
 ```sql
-
+SELECT continent, COUNT(name)
+FROM world
+GROUP BY 1;
 ```
 
 #### 7. For each continent, show the continent and number of countries with population of at least 10 million.
 
 ```sql
-
+SELECT continent, COUNT(name)
+FROM world
+WHERE population >= 10000000
+GROUP BY 1;
 ```
 
 #### 8. Show continents with total population of at least 100 million.
 
 ```sql
-
+SELECT continent
+FROM world
+GROUP BY 1
+HAVING SUM(population) >= 100000000;
 ```
 
 ---
