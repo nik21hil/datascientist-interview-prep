@@ -51,47 +51,17 @@ datascience-interview-prep/
 
 ## 💻 Coding Practice
 
-### ✅ SQLZoo Solutions
+### ✅ [SQLZoo Solutions](coding-practice/sqlzoo-solutions.md)
 Completed SQLZoo solutions for building SQL fundamentals through structured practice.
-```text
-coding-practice/sqlzoo-solutions.md
-```
 
----
-
-### 🚧 LeetCode SQL Solutions
-
+### 🚧 [LeetCode SQL Solutions](coding-practice/leetcode-sql-solutions.md)
 LeetCode SQL solutions for data science and analytics interview preparation.
 
-**File:**
-
-```text
-coding-practice/leetcode-sql-solutions.md
-```
-
----
-
-### 🚧 LeetCode Python Solutions
-
+### 🚧 [LeetCode Python Dataset Problems](coding-practice/leetcode-python-dataset-solutions.md)
 LeetCode Python solutions focused on dataset-style, pandas-style, and data manipulation problems rather than traditional data structures and algorithms.
 
-**File:**
-
-```text
-coding-practice/leetcode-python-solutions.md
-```
-
----
-
-### 🚧 CodingBat Python Solutions
-
+### 🚧 [CodingBat Python Solutions](coding-practice/codingbat-python-solutions.md)
 CodingBat Python solutions for programming warm-up, basic logic, and Python fluency.
-
-**File:**
-
-```text
-coding-practice/codingbat-python-solutions.md
-```
 
 ---
 
