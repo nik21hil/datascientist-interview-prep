@@ -1018,7 +1018,12 @@ LEFT JOIN dept d ON t.dept = d.id;
 #### 1. Numeric example question 1.
 
 ```sql
-
+SELECT A_STRONGLY_AGREE
+FROM nss
+WHERE question='Q01'
+AND institution='Edinburgh Napier University'
+AND subject='(8) Computer Science';
+-- A_STRONGLY_AGREE and other similar columns are already in percentage.
 ```
 
 #### 2. Numeric example question 2.
