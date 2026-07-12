@@ -52,11 +52,7 @@ datascience-interview-prep/
 ## 💻 Coding Practice
 
 ### ✅ SQLZoo Solutions
-
 Completed SQLZoo solutions for building SQL fundamentals through structured practice.
-
-**File:**
-
 ```text
 coding-practice/sqlzoo-solutions.md
 ```
