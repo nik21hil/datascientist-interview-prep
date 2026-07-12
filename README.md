@@ -51,67 +51,33 @@ datascience-interview-prep/
 
 ## 💻 Coding Practice
 
-### ✅ [SQLZoo Solutions](coding-practice/sqlzoo-solutions.md)
+#### ✅ [SQLZoo Solutions](coding-practice/sqlzoo-solutions.md)
 Completed SQLZoo solutions for building SQL fundamentals through structured practice.
 
-### 🚧 [LeetCode SQL Solutions](coding-practice/leetcode-sql-solutions.md)
+#### 🚧 [LeetCode SQL Solutions](coding-practice/leetcode-sql-solutions.md)
 LeetCode SQL solutions for data science and analytics interview preparation.
 
-### 🚧 [LeetCode Python Dataset Problems](coding-practice/leetcode-python-dataset-solutions.md)
+#### 🚧 [LeetCode Python Dataset Problems](coding-practice/leetcode-python-dataset-solutions.md)
 LeetCode Python solutions focused on dataset-style, pandas-style, and data manipulation problems rather than traditional data structures and algorithms.
 
-### 🚧 [CodingBat Python Solutions](coding-practice/codingbat-python-solutions.md)
+#### 🚧 [CodingBat Python Solutions](coding-practice/codingbat-python-solutions.md)
 CodingBat Python solutions for programming warm-up, basic logic, and Python fluency.
 
 ---
 
 ## 📘 Cheat Sheets
 
-### 🔜 SQL Cheat Sheet
-
+#### 🔜 [SQL Cheat Sheet](cheat-sheets/sql-cheat-sheet.md)
 A practical SQL reference for data science and analytics interviews.
 
-**File:**
-
-```text
-cheat-sheets/sql-cheat-sheet.md
-```
-
----
-
-### 🔜 Python Cheat Sheet
-
+#### 🔜 [Python Cheat Sheet](cheat-sheets/python-cheat-sheet.md)
 A quick Python reference for coding, data manipulation, and interview preparation.
 
-**File:**
-
-```text
-cheat-sheets/python-cheat-sheet.md
-```
-
----
-
-### 🔜 Pandas Cheat Sheet
-
+#### 🔜 [Pandas Cheat Sheet](cheat-sheets/pandas-cheat-sheet.md)
 A practical pandas reference for data manipulation and dataset-style interview questions.
 
-**File:**
-
-```text
-cheat-sheets/pandas-cheat-sheet.md
-```
-
----
-
-### 🔜 Statistics Cheat Sheet
-
+#### 🔜 [Statistics Cheat Sheet](cheat-sheets/statistics-cheat-sheet.md)
 A concise reference for common statistics concepts used in data science interviews.
-
-**File:**
-
-```text
-cheat-sheets/statistics-cheat-sheet.md
-```
 
 ---
 
@@ -119,67 +85,24 @@ cheat-sheets/statistics-cheat-sheet.md
 
 These templates are designed for Product Data Scientist, Analytics, Growth, Experimentation, and Business/Product Sense interviews.
 
----
-
-### 🔜 1. Decide — Should We Launch or Not?
-
+#### 🔜 [Decide — Should We Launch or Not?](case-study-templates/1-decide-should-we-launch-or-not.md)
 Framework for launch decision case studies where experiment results, business impact, and metric tradeoffs need to be evaluated.
 
-**File:**
-
-```text
-case-study-templates/1-decide-should-we-launch-or-not.md
-```
-
----
-
-### 🔜 2. Measure Success
-
+#### 🔜 [Measure Success](case-study-templates/2-measure-success.md)
 Framework for defining success metrics, guardrail metrics, diagnostic metrics, and product measurement strategy.
 
-**File:**
-
-```text
-case-study-templates/2-measure-success.md
-```
-
----
-
-### 🔜 3. Diagnose — Why Did This Metric Change?
-
+#### 🔜 [Diagnose — Why Did This Metric Change?](case-study-templates/3-diagnose-why-did-this-metric-change.md)
 Framework for debugging metric movements, identifying root causes, and structuring analytical investigations.
 
-**File:**
-
-```text
-case-study-templates/3-diagnose-why-did-this-metric-change.md
-```
-
----
-
-### 🔜 4. Improve — How Would You Improve This Product / Feature / Metric?
-
+#### 🔜 [Improve — How Would You Improve This Product / Feature / Metric?](case-study-templates/4-improve-how-would-you-improve-this-product-feature-metric.md)
 Framework for product improvement, metric growth, opportunity sizing, and prioritization case studies.
-
-**File:**
-
-```text
-case-study-templates/4-improve-how-would-you-improve-this-product-feature-metric.md
-```
 
 ---
 
 ## 🧪 Experimentation
 
-### 🔜 Experimentation Study Guide
-
+#### 🔜 [Experimentation Study Guide](experimentation/experimentation-study-guide.md)
 A study guide for A/B testing, experiment design, metric interpretation, and launch decision interviews.
-
-**File:**
-
-```text
-experimentation/experimentation-study-guide.md
-```
 
 ---
 
