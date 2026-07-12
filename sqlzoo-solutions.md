@@ -638,61 +638,83 @@ HAVING SUM(population) >= 100000000;
 #### 1. Show match id and player name for goals scored by Germany.
 
 ```sql
-
+SELECT matchid, player 
+FROM goal 
+WHERE teamid = 'GER';
 ```
 
 #### 2. Show id, stadium, team1, and team2 for a given game.
 
 ```sql
-
+SELECT id,stadium,team1,team2
+FROM game
+WHERE id = 1012;
 ```
 
 #### 3. Show player, team id, stadium, and date for German goals.
 
 ```sql
-
+SELECT t2.player, t2.teamid, t1.stadium, t1.mdate
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+WHERE t2.teamid = 'GER';
 ```
 
 #### 4. Show team1, team2, and player for goals by a specific player.
 
 ```sql
-
+SELECT t1.team1, t1.team2, t2.player
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+WHERE UPPER(t2.player) LIKE ('%MARIO%');
 ```
 
 #### 5. Show player, team id, coach, and goal time for goals scored in the first 10 minutes.
 
 ```sql
-
+SELECT g.player, g.teamid, e.coach, g.gtime
+FROM goal g JOIN eteam e ON g.teamid = e.id
+WHERE g.gtime <= 10;
 ```
 
 #### 6. Show match dates and team names where a specific coach was involved.
 
 ```sql
-
+SELECT g.mdate, e.teamname
+FROM game g JOIN eteam e ON g.team1 = e.id
+WHERE coach = 'Fernando Santos';
 ```
 
 #### 7. Show players who scored in a specific stadium.
 
 ```sql
-
+SELECT t2.player
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+WHERE t1.stadium = 'National Stadium, Warsaw';
 ```
 
 #### 8. Show players who scored against Germany.
 
 ```sql
-
+SELECT DISTINCT player
+FROM game JOIN goal ON matchid = id
+WHERE (team1 = 'GER' OR team2 = 'GER')
+AND teamid != 'GER';
 ```
 
 #### 9. Show team name and total goals scored by each team.
 
 ```sql
-
+SELECT e.teamname, count(g.teamid) AS numberofgoals
+FROM goal g
+JOIN eteam e ON g.teamid = e.id
+GROUP BY 1;
 ```
 
 #### 10. Show stadium and number of goals scored in each stadium.
 
 ```sql
-
+SELECT t1.stadium, count(t2.teamid) AS numberofgoals
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+GROUP BY 1;
 ```
 
 #### 11. Show match id, date, and number of goals for matches involving a specific team.
