@@ -833,7 +833,7 @@ WHERE a.name = 'Harrison Ford'
 AND c.ord != 1;
 ```
 
-#### 10. List films with Art Garfunkel.
+#### 10. Lead actors in 1962 movies.
 
 ```sql
 SELECT m.title, a.name
@@ -844,7 +844,7 @@ WHERE m.yr = 1962
 AND c.ord = 1;
 ```
 
-#### 11. List lead actors in Julie Andrews films released after 1978.
+#### 11. Busy years for Rocky Hudson
 
 ```sql
 SELECT m.yr, COUNT(m.title) AS numberofmovies
@@ -856,7 +856,7 @@ GROUP BY 1
 HAVING numberofmovies > 2;
 ```
 
-#### 12. Find actors with at least 15 starring roles.
+#### 12. List lead actors in Julie Andrews films.
 
 ```sql
 SELECT m.title, a.name 
@@ -869,12 +869,12 @@ AND m.id IN
 SELECT m1.id 
 FROM actor a1 
 JOIN casting c1 ON a1.id = c1.actorid
-JOIN movie m 1ON c1.movieid = m1.id
+JOIN movie m1 ON c1.movieid = m1.id
 WHERE a1.name = 'Julie Andrews'
 );
 ```
 
-#### 13. List films released in 1978 ordered by cast size.
+#### 13. Find actors with at least 15 starring roles.
 
 ```sql
 SELECT a.name
@@ -887,7 +887,7 @@ HAVING COUNT(m.id) >= 15
 ORDER BY a.name;
 ```
 
-#### 14. List people who worked with Art Garfunkel.
+#### 14. List films released in 1978 ordered by cast size.
 
 ```sql
 SELECT m.title, COUNT(a.id) AS numberofactors
@@ -898,6 +898,25 @@ WHERE m.yr = 1978
 GROUP BY 1
 ORDER BY COUNT(a.id) DESC, m.title;
 ```
+
+#### 15. List people who worked with Art Garfunkel.
+
+```sql
+SELECT a.name 
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE m.id IN 
+(
+SELECT m1.id 
+FROM actor a1 
+JOIN casting c1 ON a1.id = c1.actorid
+JOIN movie m1 ON c1.movieid = m1.id
+WHERE a1.name = 'Art Garfunkel'
+)
+AND a.name NOT IN ('Art Garfunkel');
+```
+
 
 ---
 
