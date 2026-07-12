@@ -754,85 +754,149 @@ ORDER BY t1.mdate, t1.id, t1.team1, t1.team2;
 #### 1. List the films released in 1962.
 
 ```sql
-
+SELECT id, title
+FROM movie
+WHERE yr=1962 AND budget > 2000000;
 ```
 
 #### 2. Show the year when `Citizen Kane` was released.
 
 ```sql
-
+SELECT yr
+FROM movie
+WHERE UPPER(title) = 'CITIZEN KANE';
 ```
 
 #### 3. List all `Star Trek` movies, including id, title, and year.
 
 ```sql
-
+SELECT id, title, yr
+FROM movie
+WHERE UPPER(title) LIKE 'STAR TREK%'
+ORDER BY yr;
 ```
 
 #### 4. Find the id number for actor Glenn Close.
 
 ```sql
-
+SELECT id
+FROM actor
+WHERE name = 'Glenn Close';
 ```
 
 #### 5. Find the id number for the film `Casablanca`.
 
 ```sql
-
+SELECT id
+FROM movie
+WHERE title = 'Casablanca' AND yr = 1942;
 ```
 
 #### 6. Show the cast list for `Casablanca`.
 
 ```sql
-
+SELECT a.name
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE m.title = 'Casablanca' AND m.yr = 1942;
 ```
 
 #### 7. Show the cast list for `Alien`.
 
 ```sql
-
+SELECT a.name
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE m.title = 'Alien';
 ```
 
 #### 8. List the films in which Harrison Ford appeared.
 
 ```sql
-
+SELECT m.title
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE a.name = 'Harrison Ford';
 ```
 
 #### 9. List films where Harrison Ford appeared but was not the starring actor.
 
 ```sql
-
+SELECT m.title
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE a.name = 'Harrison Ford'
+AND c.ord != 1;
 ```
 
 #### 10. List films with Art Garfunkel.
 
 ```sql
-
+SELECT m.title, a.name
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE m.yr = 1962
+AND c.ord = 1;
 ```
 
 #### 11. List lead actors in Julie Andrews films released after 1978.
 
 ```sql
-
+SELECT m.yr, COUNT(m.title) AS numberofmovies
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE a.name = 'Rock Hudson'
+GROUP BY 1
+HAVING numberofmovies > 2;
 ```
 
 #### 12. Find actors with at least 15 starring roles.
 
 ```sql
-
+SELECT m.title, a.name 
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE c.ord = 1
+AND m.id IN 
+(
+SELECT m1.id 
+FROM actor a1 
+JOIN casting c1 ON a1.id = c1.actorid
+JOIN movie m 1ON c1.movieid = m1.id
+WHERE a1.name = 'Julie Andrews'
+);
 ```
 
 #### 13. List films released in 1978 ordered by cast size.
 
 ```sql
-
+SELECT a.name
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE c.ord = 1
+GROUP BY 1
+HAVING COUNT(m.id) >= 15
+ORDER BY a.name;
 ```
 
 #### 14. List people who worked with Art Garfunkel.
 
 ```sql
-
+SELECT m.title, COUNT(a.id) AS numberofactors
+FROM actor a 
+JOIN casting c ON a.id = c.actorid
+JOIN movie m ON c.movieid = m.id
+WHERE m.yr = 1978
+GROUP BY 1
+ORDER BY COUNT(a.id) DESC, m.title;
 ```
 
 ---
