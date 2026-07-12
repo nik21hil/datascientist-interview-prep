@@ -925,19 +925,26 @@ AND a.name NOT IN ('Art Garfunkel');
 #### 1. List teachers who have NULL for their department.
 
 ```sql
-
+SELECT t.name
+FROM teacher t 
+LEFT JOIN dept d ON t.dept = d.id
+WHERE d.name IS NULL;
 ```
 
 #### 2. Use INNER JOIN to show teacher and department details.
 
 ```sql
-
+SELECT t.name, d.name
+FROM teacher t
+INNER JOIN dept d ON t.dept = d.id;
 ```
 
 #### 3. Use LEFT JOIN to show all teachers and their departments.
 
 ```sql
-
+SELECT t.name, d.name
+FROM teacher t
+LEFT JOIN dept d ON t.dept = d.id;
 ```
 
 #### 4. Use COALESCE to show mobile number or default value.
