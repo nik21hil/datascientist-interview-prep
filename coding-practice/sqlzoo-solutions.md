@@ -939,7 +939,7 @@ FROM teacher t
 INNER JOIN dept d ON t.dept = d.id;
 ```
 
-#### 3. Use LEFT JOIN to show all teachers and their departments.
+#### 3. Use a different JOIN so that all teachers are listed. 
 
 ```sql
 SELECT t.name, d.name
@@ -947,40 +947,68 @@ FROM teacher t
 LEFT JOIN dept d ON t.dept = d.id;
 ```
 
-#### 4. Use COALESCE to show mobile number or default value.
+#### 4. Use a different JOIN so that all departments are listed. 
 
 ```sql
-
+SELECT t.name, d.name
+FROM teacher t
+RIGHT JOIN dept d ON t.dept = d.id;
 ```
 
-#### 5. Use COALESCE to show department name or default value.
+#### 5. Use COALESCE to show mobile number or default value.
 
 ```sql
-
+SELECT name, COALESCE(mobile, '07986 444 2266')
+FROM teacher;
 ```
 
-#### 6. Count the number of teachers.
+#### 6. Use the COALESCE function and a LEFT JOIN to print the teacher name and department name.
 
 ```sql
-
+SELECT t.name, COALESCE(d.name, 'None') AS dept_name
+FROM teacher t
+LEFT JOIN dept d ON t.dept = d.id;
 ```
 
-#### 7. Count the number of teachers by department.
+#### 7. Use COUNT to show the number of teachers and the number of mobile phones. 
 
 ```sql
-
+SELECT COUNT(t.name) AS numberofteachers, COUNT(t.mobile) AS mobilephones
+FROM teacher t;
 ```
 
-#### 8. Use CASE to classify teachers by department.
+#### 8. Count the number of teachers by department.
 
 ```sql
-
+SELECT d.name, COUNT(t.name) AS numberofteachers
+FROM teacher t
+RIGHT JOIN dept d ON t.dept = d.id
+GROUP BY 1;
 ```
 
-#### 9. Use CASE to classify teachers into custom groups.
+#### 9. Use CASE to classify teachers by department.
 
 ```sql
+SELECT t.name, 
+CASE 
+WHEN d.id <3 THEN 'Sci' 
+ELSE 'Art' 
+END AS dept
+FROM teacher t
+LEFT JOIN dept d ON t.dept = d.id;
+```
 
+#### 10. Use CASE to classify teachers into custom groups.
+
+```sql
+SELECT t.name, 
+CASE 
+WHEN d.id <3 THEN 'Sci' 
+WHEN d.id = 3 THEN 'Art' 
+ELSE 'None' 
+END AS dept
+FROM teacher t
+LEFT JOIN dept d ON t.dept = d.id;
 ```
 
 ---
