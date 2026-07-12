@@ -1015,57 +1015,85 @@ LEFT JOIN dept d ON t.dept = d.id;
 
 ### 8+ Numeric Examples
 
-#### 1. Numeric example question 1.
+#### 1. Show the the percentage who STRONGLY AGREE
 
 ```sql
 SELECT A_STRONGLY_AGREE
 FROM nss
-WHERE question='Q01'
-AND institution='Edinburgh Napier University'
-AND subject='(8) Computer Science';
--- A_STRONGLY_AGREE and other similar columns are already in percentage.
+WHERE question = 'Q01'
+AND institution = 'Edinburgh Napier University'
+AND subject = '(8) Computer Science';
 ```
 
-#### 2. Numeric example question 2.
+#### 2. Calculate how many agree or strongly agree
 
 ```sql
-
+SELECT institution, subject
+FROM nss
+WHERE score >= 100
+AND question = 'Q15';
 ```
 
-#### 3. Numeric example question 3.
+#### 3. Unhappy Computer Students
 
 ```sql
-
+SELECT institution, score
+FROM nss
+WHERE question='Q15'
+AND subject='(8) Computer Science'
+AND score < 50;
 ```
 
-#### 4. Numeric example question 4.
+#### 4. More Computing or Creative Students?
 
 ```sql
-
+SELECT subject, SUM(response) AS totalnumberofresponses
+FROM nss
+WHERE question = 'Q22'
+AND subject IN ('(8) Computer Science', '(H) Creative Arts and Design')
+GROUP BY 1;
 ```
 
-#### 5. Numeric example question 5.
+#### 5. Strongly Agree Numbers
 
 ```sql
-
+SELECT subject, SUM((response * A_STRONGLY_AGREE) / 100) AS totalnumberofresponses
+FROM nss
+WHERE question = 'Q22'
+AND subject IN ('(8) Computer Science', '(H) Creative Arts and Design')
+GROUP BY 1;
 ```
 
-#### 6. Numeric example question 6.
+#### 6. Strongly Agree, Percentage
 
 ```sql
-
+SELECT subject, ROUND(SUM(A_STRONGLY_AGREE*response)/sum(response),0) AS stronglyagreeperc
+FROM nss
+WHERE question = 'Q22'
+AND subject IN ('(8) Computer Science', '(H) Creative Arts and Design')
+GROUP BY 1;
 ```
 
-#### 7. Numeric example question 7.
+#### 7. Scores for Institutions in Manchester
 
 ```sql
-
+SELECT institution, ROUND(SUM(score*response)/sum(response),0) AS score
+FROM nss
+WHERE question = 'Q22'
+AND institution LIKE ('%Manchester%')
+GROUP BY 1
+ORDER BY institution;
 ```
 
 #### 8. Numeric example question 8.
 
 ```sql
-
+SELECT institution, SUM(sample) AS sample,
+SUM(CASE WHEN subject = '(8) Computer Science' THEN sample ELSE 0 END) AS compstudents
+FROM nss
+WHERE question = 'Q01'
+AND institution LIKE ('%Manchester%')
+GROUP BY 1;
 ```
 
 ---
