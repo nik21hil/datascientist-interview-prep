@@ -108,29 +108,16 @@ A study guide for A/B testing, experiment design, metric interpretation, and lau
 
 ## 🎲 Probability and Statistics
 
-### 🔜 Probability Distributions Study Guide
-
+#### 🔜 [Probability Distributions Study Guide](probability-statistics/probability-distributions-study-guide.md)
 A practical guide to probability distributions and related concepts commonly used in data science interviews.
-
-**File:**
-
-```text
-probability-statistics/probability-distributions-study-guide.md
-```
 
 ---
 
 ## 🤖 Machine Learning
 
-### 🔜 Machine Learning Interview Notes
+#### 🔜 [Machine Learning Interview Notes](machine-learning/ml-interview-notes.md)
 
 A practical reference for common machine learning concepts, model evaluation, feature engineering, and applied ML interview questions.
-
-**File:**
-
-```text
-machine-learning/ml-interview-notes.md
-```
 
 ---
 
