@@ -720,19 +720,31 @@ GROUP BY 1;
 #### 11. Show match id, date, and number of goals for matches involving a specific team.
 
 ```sql
-
+SELECT t2.matchid, t1.mdate, count(t2.teamid) AS numberofgoals
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+WHERE (t1.team1 = 'POL' OR t1.team2 = 'POL')
+GROUP BY 1,2;
 ```
 
 #### 12. Show match id, date, and number of goals scored by Germany.
 
 ```sql
-
+SELECT t2.matchid, t1.mdate, count(t2.teamid) AS numberofgoals
+FROM game t1 JOIN goal t2 ON t1.id = t2.matchid
+WHERE t2.teamid = 'GER'
+GROUP BY 1,2;
 ```
 
 #### 13. Show every match with team names and score.
 
 ```sql
-
+SELECT t1.mdate, 
+t1.team1, SUM(CASE WHEN t2.teamid = t1.team1 THEN 1 ELSE 0 END) AS score1,
+t1.team2, SUM(CASE WHEN t2.teamid = t1.team2 THEN 1 ELSE 0 END) AS score2
+FROM game t1 LEFT JOIN goal t2 ON t1.id = t2.matchid
+WHERE (t1.team1 = 'ENG' OR t1.team2 = 'ENG')
+GROUP BY 1,2,4
+ORDER BY t1.mdate, t1.id, t1.team1, t1.team2;
 ```
 
 ---
