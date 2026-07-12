@@ -1,4 +1,4 @@
-# 🧠 Data Science Interview Prep
+<h1 align="center">🧠 Data Science Interview Prep</h1> 
 
 A structured interview preparation repository for Data Scientist, Product Data Scientist, Analytics, Applied Scientist, and ML-adjacent roles.
 
