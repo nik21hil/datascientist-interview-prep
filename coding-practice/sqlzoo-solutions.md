@@ -1085,7 +1085,7 @@ GROUP BY 1
 ORDER BY institution;
 ```
 
-#### 8. Numeric example question 8.
+#### 8. Number of Computing Students in Manchester
 
 ```sql
 SELECT institution, SUM(sample) AS sample,
