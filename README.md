@@ -2,11 +2,12 @@
 
 A structured interview preparation repository for Data Scientist, Product Data Scientist, Analytics, Applied Scientist, and ML-adjacent roles.
 
-This repo brings together my coding practice, SQL practice, case study frameworks, experimentation notes, probability/statistics guides, and data science interview templates in one place.
+This repository brings together SQL practice, Python practice for data-focused problems, case study frameworks, experimentation notes, probability/statistics guides, and interview preparation templates in one place.
 
-The goal is to build a practical, reusable, and well-organized preparation system rather than a scattered collection of notes.
+The goal is to build a practical and reusable preparation system for data science interviews.
 
 ---
+
 
 ## 📂 Repository Structure
 
@@ -44,373 +45,224 @@ datascience-interview-prep/
 │
 └── resources/
     └── useful-links.md
+```
 
-💻 Coding Practice
-1. SQLZoo Solutions — WIP
+---
 
-Structured SQLZoo solutions for building SQL fundamentals.
+## 💻 Coding Practice
 
-Focus areas:
+### ✅ SQLZoo Solutions
 
-SELECT
-WHERE
-GROUP BY
-HAVING
-JOIN
-NULL handling
-Subqueries
-Window functions
-Self joins
+Completed SQLZoo solutions for building SQL fundamentals through structured practice.
 
-File:
+**File:**
 
+```text
 coding-practice/sqlzoo-solutions.md
-2. LeetCode SQL Solutions — WIP
+```
+
+---
+
+### 🚧 LeetCode SQL Solutions
 
 LeetCode SQL solutions for data science and analytics interview preparation.
 
-Focus areas:
+**File:**
 
-Filtering
-Aggregation
-Joins
-Subqueries
-Window functions
-Ranking
-Date/time logic
-Retention-style queries
-Funnel-style queries
-
-File:
-
+```text
 coding-practice/leetcode-sql-solutions.md
-3. LeetCode Python Solutions — WIP
+```
 
-LeetCode Python solutions for coding interview preparation.
+---
 
-Focus areas:
+### 🚧 LeetCode Python Solutions
 
-Arrays
-Strings
-Hashmaps
-Two pointers
-Sliding window
-Binary search
-Stack / queue
-Trees
-Graphs
-Dynamic programming
-Greedy algorithms
+LeetCode Python solutions focused on dataset-style, pandas-style, and data manipulation problems rather than traditional data structures and algorithms.
 
-File:
+**File:**
 
+```text
 coding-practice/leetcode-python-solutions.md
-4. CodingBat Python Solutions — WIP
+```
 
-CodingBat Python solutions for warm-up programming practice.
+---
 
-Focus areas:
+### 🚧 CodingBat Python Solutions
 
-Basic conditionals
-String manipulation
-List operations
-Loops
-Boolean logic
-Recursion basics
+CodingBat Python solutions for programming warm-up, basic logic, and Python fluency.
 
-File:
+**File:**
 
+```text
 coding-practice/codingbat-python-solutions.md
-📘 Cheat Sheets
-SQL Cheat Sheet — Coming Soon
+```
 
-A practical SQL reference for interviews.
+---
 
-Planned topics:
+## 📘 Cheat Sheets
 
-SELECT, WHERE, GROUP BY, HAVING
-JOIN patterns
-Window functions
-Ranking functions
-Date functions
-CASE WHEN
-Common interview query templates
-Product analytics query patterns
+### 🔜 SQL Cheat Sheet
 
-File:
+A practical SQL reference for data science and analytics interviews.
 
+**File:**
+
+```text
 cheat-sheets/sql-cheat-sheet.md
-Python Cheat Sheet — Coming Soon
+```
 
-A quick Python reference for coding and data science interviews.
+---
 
-Planned topics:
+### 🔜 Python Cheat Sheet
 
-Lists, dictionaries, sets, tuples
-Sorting
-Loops and comprehensions
-Common string operations
-Common array patterns
-Hashmap patterns
-Useful built-in functions
+A quick Python reference for coding, data manipulation, and interview preparation.
 
-File:
+**File:**
 
+```text
 cheat-sheets/python-cheat-sheet.md
-Pandas Cheat Sheet — Coming Soon
+```
 
-A practical guide for data manipulation interview questions.
+---
 
-Planned topics:
+### 🔜 Pandas Cheat Sheet
 
-Filtering
-Grouping
-Aggregation
-Joins / merges
-Pivot tables
-Missing values
-Date handling
-Window-style operations in pandas
+A practical pandas reference for data manipulation and dataset-style interview questions.
 
-File:
+**File:**
 
+```text
 cheat-sheets/pandas-cheat-sheet.md
-Statistics Cheat Sheet — Coming Soon
+```
 
-A concise reference for common statistics interview topics.
+---
 
-Planned topics:
+### 🔜 Statistics Cheat Sheet
 
-Mean, median, variance, standard deviation
-Confidence intervals
-Hypothesis testing
-p-values
-Type I / Type II errors
-Power
-Correlation vs causation
-Sampling bias
+A concise reference for common statistics concepts used in data science interviews.
 
-File:
+**File:**
 
+```text
 cheat-sheets/statistics-cheat-sheet.md
-📊 Case Study Templates — Coming Soon
+```
+
+---
+
+## 📊 Case Study Templates
 
 These templates are designed for Product Data Scientist, Analytics, Growth, Experimentation, and Business/Product Sense interviews.
 
-1. Decide — Should We Launch or Not?
+---
 
-Framework for launch decision case studies.
+### 🔜 1. Decide — Should We Launch or Not?
 
-Common prompts:
+Framework for launch decision case studies where experiment results, business impact, and metric tradeoffs need to be evaluated.
 
-Should we launch this feature?
-Experiment results are mixed. What would you recommend?
-Metrics improved in one segment but declined in another. What should we do?
+**File:**
 
-File:
-
+```text
 case-study-templates/1-decide-should-we-launch-or-not.md
-2. Measure Success
+```
 
-Framework for defining success metrics.
+---
 
-Common prompts:
+### 🔜 2. Measure Success
 
-How would you measure success for this product?
-What metrics would you track for a new feature?
-How would you define north-star and guardrail metrics?
+Framework for defining success metrics, guardrail metrics, diagnostic metrics, and product measurement strategy.
 
-File:
+**File:**
 
+```text
 case-study-templates/2-measure-success.md
-3. Diagnose — Why Did This Metric Change?
+```
 
-Framework for metric debugging and root-cause analysis.
+---
 
-Common prompts:
+### 🔜 3. Diagnose — Why Did This Metric Change?
 
-DAU dropped 10%. What happened?
-Conversion rate increased unexpectedly. How would you investigate?
-Revenue declined but traffic increased. How would you diagnose it?
+Framework for debugging metric movements, identifying root causes, and structuring analytical investigations.
 
-File:
+**File:**
 
+```text
 case-study-templates/3-diagnose-why-did-this-metric-change.md
-4. Improve — How Would You Improve This Product / Feature / Metric?
+```
 
-Framework for product improvement and metric growth case studies.
+---
 
-Common prompts:
+### 🔜 4. Improve — How Would You Improve This Product / Feature / Metric?
 
-How would you improve retention?
-How would you increase conversion?
-How would you improve engagement for this feature?
-How would you prioritize product opportunities?
+Framework for product improvement, metric growth, opportunity sizing, and prioritization case studies.
 
-File:
+**File:**
 
+```text
 case-study-templates/4-improve-how-would-you-improve-this-product-feature-metric.md
-🧪 Experimentation Study Guide — Coming Soon
+```
 
-A study guide for A/B testing and experimentation interviews.
+---
 
-Planned topics:
+## 🧪 Experimentation
 
-A/B testing basics
-Randomization
-Primary metrics and guardrail metrics
-Sample size
-Power
-p-values
-Confidence intervals
-Multiple testing
-Novelty effects
-Network effects
-Interference
-CUPED
-Difference-in-differences
-Experiment readout structure
-Launch decision framework
+### 🔜 Experimentation Study Guide
 
-File:
+A study guide for A/B testing, experiment design, metric interpretation, and launch decision interviews.
 
+**File:**
+
+```text
 experimentation/experimentation-study-guide.md
-🎲 Probability Distributions Study Guide — Coming Soon
+```
 
-A practical guide to probability distributions commonly used in data science interviews.
+---
 
-Planned topics:
+## 🎲 Probability and Statistics
 
-Bernoulli distribution
-Binomial distribution
-Poisson distribution
-Normal distribution
-Exponential distribution
-Geometric distribution
-Uniform distribution
-Central Limit Theorem
-Expected value
-Variance
-When to use which distribution
+### 🔜 Probability Distributions Study Guide
 
-File:
+A practical guide to probability distributions and related concepts commonly used in data science interviews.
 
+**File:**
+
+```text
 probability-statistics/probability-distributions-study-guide.md
-🤖 Machine Learning Interview Notes — Coming Soon
+```
 
-A practical guide for ML and applied data science interviews.
+---
 
-Planned topics:
+## 🤖 Machine Learning
 
-Supervised vs unsupervised learning
-Bias-variance tradeoff
-Logistic regression
-Decision trees
-Random forests
-Gradient boosting
-Clustering
-Model evaluation
-Precision, recall, F1, AUC
-Feature engineering
-Overfitting
-Cross-validation
-Model monitoring
+### 🔜 Machine Learning Interview Notes
 
-File:
+A practical reference for common machine learning concepts, model evaluation, feature engineering, and applied ML interview questions.
 
+**File:**
+
+```text
 machine-learning/ml-interview-notes.md
-➕ Additional Practice Areas to Add
+```
 
-Over time, I plan to add the following coding and data interview practice areas:
+---
 
-SQL Practice
-DataLemur SQL problems
-StrataScratch SQL problems
-HackerRank SQL problems
-Mode Analytics SQL tutorial
-Product analytics SQL case studies
-Funnel analysis queries
-Retention queries
-Cohort analysis queries
-Window function drills
-Python Practice
-HackerRank Python
-NeetCode 150
-Blind 75
-Pandas interview problems
-NumPy practice
-Data cleaning exercises
-Dictionary / hashmap drills
-String manipulation drills
-Sliding window drills
-Two-pointer drills
-Data Science Case Practice
-Product sense cases
-Experiment readout cases
-Metric design cases
-Root-cause analysis cases
-Forecasting cases
-Marketplace cases
-Ads measurement cases
-Recommendation system cases
-Causal inference cases
-🧩 Standard Solution Format
+## ➕ Additional Practice Areas to Add
 
-For coding problems, I will use the following format:
+Future additions may include practice from the following platforms and resources:
 
-## Problem Name
-
-**Platform:**  
-**Difficulty:**  
-**Topic / Pattern:**  
-**Link:**  
-
-### Problem
-
-Brief description of the problem.
-
-### Approach
-
-Explain the intuition and logic.
-
-### Solution
-
-```python
-# code here
-Complexity
-Time Complexity:
-Space Complexity:
-Notes
-
-Key learning or mistake to remember.
-
-
-For SQL problems:
-
-```markdown
-## Problem Name
-
-**Platform:**  
-**Difficulty:**  
-**SQL Concepts:**  
-**Link:**  
-
-### Problem
-
-Brief description of the problem.
-
-### Approach
-
-Explain the query logic.
-
-### Solution
-
-```sql
--- query here
-Notes
-
-Key SQL pattern or edge case.
-
+- DataLemur SQL
+- StrataScratch SQL
+- HackerRank SQL
+- HackerRank Python
+- Mode Analytics SQL Tutorial
+- Interview Query
+- Kaggle Learn
+- Blind 75
+- NeetCode 150
+- CodeSignal
+- Product Data Science Question Bank
+- Experimentation Question Bank
+- Metrics and Product Sense Question Bank
+- Machine Learning Question Bank
 
 ---
 
@@ -419,12 +271,17 @@ Key SQL pattern or edge case.
 The goal of this repository is to create a focused and reusable interview preparation system across:
 
 - SQL
-- Python coding
-- Data structures and algorithms
+- Python for data science
+- Data manipulation
 - Product analytics
 - Experimentation
 - Probability and statistics
 - Machine learning
 - Data science case studies
+- Metric design
+- Root-cause analysis
+- Launch decision-making
 
-This repo is a work in progress and will continue to evolve as I practice more problems and refine my interview frameworks.
+This repository is a work in progress and will continue to evolve as I practice more problems and refine my interview frameworks.
+
+---
